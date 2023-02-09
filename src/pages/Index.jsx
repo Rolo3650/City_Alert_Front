@@ -6,7 +6,11 @@ const Index = () => {
     const [state, dispatch] = useContext(Context)
 
     return (
-        <div>Hola</div>
+        <div className="header">
+            <div className="contenido">
+                Hola
+            </div>
+        </div>
     )
 }
 

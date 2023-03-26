@@ -1,0 +1,46 @@
+.card-local {
+
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border-radius: 15px;
+    overflow: scroll;
+
+    &.card-xl {
+
+        max-width: 1400px;
+
+    }
+
+    &.color-primary {
+
+        background-color: $white;
+
+    }
+
+    &.card-login {
+
+        display: grid;
+
+        @media screen and (max-width: 768px) {
+
+            grid-template-columns: auto;
+
+            .first {
+
+                grid-column: 1 / -1;
+                grid-row: 1 / 2;
+
+            }
+            
+        }
+
+        @media screen and (min-width: 768px) {
+
+            grid-template-columns: repeat(2, 1fr);
+            
+        }
+
+    }
+
+}

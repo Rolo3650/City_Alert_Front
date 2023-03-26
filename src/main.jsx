@@ -1,4 +1,5 @@
 import React from 'react'
+import { CookiesProvider } from 'react-cookie'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { App } from './App'
@@ -7,12 +8,14 @@ import './styles/scss/index.scss'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ReducerContext>
+    <CookiesProvider >
+      <BrowserRouter>
+        <ReducerContext>
 
-        <App />
+          <App />
 
-      </ReducerContext>
-    </BrowserRouter>
+        </ReducerContext>
+      </BrowserRouter>
+    </CookiesProvider>
   </React.StrictMode>,
 )

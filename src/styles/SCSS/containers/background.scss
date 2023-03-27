@@ -3,7 +3,7 @@
     &.background-page {
         margin: 0;
         padding: 0;
-        font-family: 'Poppins' sans-serif;
+        font-family: 'Poppins', sans-serif;
         box-sizing: border-box;
         height: 100vh;
         width: 100vw;
@@ -27,9 +27,9 @@
 
     }
 
-    &.background-scroll {
+    &.background-y-scroll {
 
-        overflow: scroll;
+        overflow-y: scroll;
 
     }
 }

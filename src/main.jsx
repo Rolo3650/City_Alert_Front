@@ -6,6 +6,7 @@ import { App } from './App'
 import { ReducerContext } from './context/useReducer'
 import 'bootstrap/scss/bootstrap.scss'
 import './styles/scss/index.scss'
+import { Theme } from './containers/theme/Index'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -13,10 +14,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <BrowserRouter>
         <ReducerContext>
 
-          <App />
+          <Theme>
+
+            <App />
+
+          </Theme>
 
         </ReducerContext>
       </BrowserRouter>
     </CookiesProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )

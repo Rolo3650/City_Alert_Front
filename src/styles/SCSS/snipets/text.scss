@@ -1,0 +1,29 @@
+.text {
+
+    &-color {
+
+        &-dark-grey {
+
+            color: $dark-grey;
+
+        }
+
+    }
+
+    &-weight {
+
+        &-700 {
+
+            font-weight: 700;
+
+        }
+
+    }
+
+    &-poppins {
+
+        font-family: 'Poppins', sans-serif;
+
+    }
+
+}

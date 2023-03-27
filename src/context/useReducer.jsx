@@ -1,15 +1,31 @@
 import React, { createContext, useReducer } from 'react'
+import { actionTypes } from './ActionTypes'
 
 
 const initial_state = {
-    
+    login: {
+        loading: false,
+        email: {
+            value: '',
+            error: false
+        },
+        password: {
+            value: '',
+            error: false,
+            show_password: false
+        }
+    }
 }
 
-const reducerObject = (state, payload) => ({
-    [actionTypes.SET_INITIAL_SATE]: {
-        
-    }
-})
+const reducerObject = (state, payload) => {
+    return ({
+        [actionTypes.SET_INITIAL_SATE]: initial_state,
+
+        // login
+        [actionTypes.SET_LOGIN_INITIAL_STATE]: { ...state, login: initial_state.login },
+        [actionTypes.SET_LOGIN]: { ...state, login: payload }
+    })
+}
 
 const reducer = (state, action) => {
     if (reducerObject(state)[action.type]) {

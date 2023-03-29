@@ -1,3 +1,6 @@
+import { colors } from "./colors";
+import { regex } from "./regex";
+
 const config = {
 
     // Server Front
@@ -8,14 +11,10 @@ const config = {
     URL_BACK: 'http://localhost:4000/',
 
     // Colors 
-    colors: {
-        // name color
-        WHITE: "#FFF",
+    colors: colors(),
 
-        // themes
-        PRIMARY: "#452743",
-        SECONDARY: "#639b90",
-    }
+    // regex
+    regex: regex()
 
 };
 

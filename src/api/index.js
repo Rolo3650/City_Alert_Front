@@ -4,7 +4,10 @@ import { config } from '../utils/config';
 const api =
     axios.create({
         baseURL: config.URL_BACK,
-        headers: {},
+        headers: {
+            Accepted: 'appication/json',
+            'Content-Type': 'application/json'
+        },
     });
 
 export default api;

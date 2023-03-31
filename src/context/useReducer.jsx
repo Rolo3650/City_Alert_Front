@@ -1,21 +1,6 @@
 import React, { createContext, useReducer } from 'react'
 import { actionTypes } from './ActionTypes'
-
-
-const initial_state = {
-    login: {
-        loading: false,
-        email: {
-            value: '',
-            error: false
-        },
-        password: {
-            value: '',
-            error: false,
-            show_password: false
-        }
-    }
-}
+import { initial_state } from './states'
 
 const reducerObject = (state, payload) => {
     return ({

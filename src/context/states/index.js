@@ -1,7 +1,9 @@
-import { getLogin } from "./login/login"
+import { getLogin } from "./user/login"
+import { getUser } from "./user/user"
 
 const initial_state = {
-    login: getLogin()
+    login: getLogin(),
+    user: getUser(),
 }
 
 export { initial_state }

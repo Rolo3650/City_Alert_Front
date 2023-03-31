@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { actionTypes } from '../../context/ActionTypes'
 import { Context } from '../../context/useReducer'
-import { config } from '../../utils/config'
 import { LOGIN } from '../../api/user/user'
 import { useApi } from '../api/useApi'
 import { useCookies } from 'react-cookie'

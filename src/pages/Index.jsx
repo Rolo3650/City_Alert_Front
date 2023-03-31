@@ -1,10 +1,18 @@
-import React, { useContext } from 'react'
+import React, { useEffect } from 'react'
 import { LoginForm } from '../containers/login/loginForm'
-import { Context } from '../context/useReducer'
+import { useUser } from '../hooks/user/useUser'
+import { useNavigate } from 'react-router-dom'
 
 const Index = () => {
 
-    const [state, dispatch] = useContext(Context)
+    const { user } = useUser()
+    const navigateTo = useNavigate()
+
+    useEffect(() => {
+        if (user?.id_user) {
+            navigateTo('/home')
+        }
+    }, [user])
 
     return (
         <div className="background background-page background-y-scroll background-white-to-green d-grid align-items-center p-3">

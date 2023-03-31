@@ -1,6 +1,7 @@
 import React, { createContext, useReducer } from 'react'
 import { actionTypes } from './ActionTypes'
 import { initial_state } from './states'
+import { useLogin } from '../hooks/user/useLogin'
 
 const reducerObject = (state, payload) => {
     return ({
@@ -8,7 +9,11 @@ const reducerObject = (state, payload) => {
 
         // login
         [actionTypes.SET_LOGIN_INITIAL_STATE]: { ...state, login: initial_state.login },
-        [actionTypes.SET_LOGIN]: { ...state, login: payload }
+        [actionTypes.SET_LOGIN]: { ...state, login: payload },
+
+        // user
+        [actionTypes.SET_USER_INITIAL_STATE]: { ...state, user: initial_state.user },
+        [actionTypes.SET_USER]: { ...state, user: payload },
     })
 }
 

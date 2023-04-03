@@ -10,7 +10,7 @@ const Step1 = () => {
     const [sexs, setSexs] = useState([]);
 
     const returnSexsOptions = () => sexs?.map(sex =>
-        <MenuItem value={sex?.id}>{sex?.sex}</MenuItem>
+        <MenuItem value={`${sex?.id_sex}`} key={sex?.id_sex}>{sex?.sex}</MenuItem>
     )
 
     const init = async () => {
@@ -49,6 +49,7 @@ const Step1 = () => {
                         <InputLabel>Sexo</InputLabel>
                         <Select
                             label="Sexo"
+                            value={""}
                         >
                             {returnSexsOptions()}
                         </Select>

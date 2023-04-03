@@ -4,11 +4,13 @@ import { Context } from '../../context/useReducer'
 import { LOGIN } from '../../api/user/user'
 import { useApi } from '../api/useApi'
 import { useCookies } from 'react-cookie'
+import { useUser } from './useUser'
 
 const useLogin = () => {
 
     const [state, dispatch] = useContext(Context)
     const [userCookie, setUserCookie, removeUserCookie] = useCookies(['user']);
+    const { setUser } = useUser()
     const apiLogin = useApi(LOGIN);
 
     const setLogin = (payload) => {
@@ -36,6 +38,7 @@ const useLogin = () => {
         if (resLogin?.ok) {
             setUserCookie("user", resLogin.user)
             setLoginInitialState()
+            setUser(resLogin.user)
             return true
         } else {
             setLogin({

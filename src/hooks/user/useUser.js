@@ -23,7 +23,8 @@ const useUser = () => {
     return {
         setUserFromCookie,
         setUserInitialState,
-        user: state.user
+        user: state.user,
+        setUser
     }
 }
 

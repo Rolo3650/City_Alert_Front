@@ -8,7 +8,7 @@
 
     &.card-xl {
 
-        max-width: 1200px;
+        max-width: 1500px;
 
     }
 
@@ -32,13 +32,37 @@
                 grid-row: 1 / 2;
 
             }
-            
+
         }
 
         @media screen and (min-width: 768px) {
 
             grid-template-columns: repeat(2, 1fr);
-            
+
+        }
+
+    }
+
+    &.card-sign-up {
+
+        display: grid;
+
+        @media screen and (max-width: 768px) {
+
+            grid-template-columns: auto;
+
+        }
+
+        @media screen and (max-width: 1024px) and (min-width: 768px) {
+
+            grid-template-columns: 1fr 2fr;
+
+        }
+
+        @media screen and (min-width: 1024px) {
+
+            grid-template-columns: repeat(2, 1fr);
+
         }
 
     }

@@ -4,9 +4,12 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { App } from './App'
 import { ReducerContext } from './context/useReducer'
+import { Theme } from './containers/theme/Index'
+import { LocalizationProvider } from '@mui/x-date-pickers-pro'
+import { AdapterMoment } from '@mui/x-date-pickers-pro/AdapterMoment'
 import 'bootstrap/scss/bootstrap.scss'
 import './styles/scss/index.scss'
-import { Theme } from './containers/theme/Index'
+import '@sweetalert2/themes/material-ui'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -15,9 +18,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <ReducerContext>
 
           <Theme>
+            <LocalizationProvider dateAdapter={AdapterMoment}>
 
-            <App />
+              <App />
 
+            </LocalizationProvider>
           </Theme>
 
         </ReducerContext>

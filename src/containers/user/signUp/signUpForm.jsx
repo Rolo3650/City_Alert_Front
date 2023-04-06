@@ -1,20 +1,31 @@
-import React, { useState } from 'react'
-import { Step1 } from './step1';
-import { Step, StepLabel, Stepper } from '@mui/material';
+import React, { useEffect, useState } from 'react'
+import { Step1 } from '../../../components/signUp/steps/Step1';
+import { CircularProgress, Step, StepLabel, Stepper, Button } from '@mui/material';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import FolderShared from '@mui/icons-material/FolderShared';
 import LocationOn from '@mui/icons-material/LocationOn';
 import CheckCircle from '@mui/icons-material/CheckCircle';
 import { config } from '../../../utils/config';
-import { useEffect } from 'react';
+import { useSignUp } from '../../../hooks/user/useSignUp';
+import { HandlerSteps } from '../../../components/signUp/HandlerSteps';
+import { Step2 } from '../../../components/signUp/steps/Step2';
+import { Step3 } from '../../../components/signUp/steps/Step3';
+import LoginIcon from '@mui/icons-material/Login';
+import { useNavigate } from 'react-router-dom';
 
-const Index = () => {
+const Index = ({ setOpenBackDrop }) => {
 
-    const [step, setStep] = useState(0)
+    const { sign_up } = useSignUp();
+    const { step, loading } = sign_up;
+    const navigateTo = useNavigate()
 
     const returnStep = () => {
         if (step == 0) {
             return <Step1 />
+        } else if (step == 1) {
+            return <Step2 />
+        } else if (step == 2) {
+            return <Step3 />
         } else {
             // setStep(0);
             return null;
@@ -33,13 +44,16 @@ const Index = () => {
         return step < index ? child : <CheckCircle style={returnStepIconColor(0)} />;
     }
 
-    useEffect(() => {
-
-    }, [])
+    const returnToLogin = () => {
+        setOpenBackDrop(true)
+        setTimeout(() => {
+            navigateTo('/')
+        }, 500)
+    }
 
     return (
         <div>
-            <Stepper className='mb-3' activeStep={step} alternativeLabel>
+            <Stepper className='mb-4' activeStep={step} alternativeLabel>
                 <Step>
                     <StepLabel
                         icon={returnStepIcon(<FolderShared style={returnStepIconColor(0)} />, 1)}
@@ -68,8 +82,31 @@ const Index = () => {
                     </StepLabel>
                 </Step>
             </Stepper>
-            {returnStep()}
-        </div>
+            <div className='step-sign-up'>
+                <div className={`align-items-center d-${!loading ? 'none' : 'grid'}`}>
+                    <CircularProgress
+                        color='secondary'
+                        className='mx-auto'
+                    />
+                </div>
+                <div className={`${loading ? 'd-none' : ''}`}>
+                    {returnStep()}
+                </div>
+                <div className='w-100 d-flex justify-content-between'>
+                    <div className='w-100 d-flex justify-content-start'>
+                        <Button
+                            variant='outlined'
+                            color='secondary'
+                            startIcon={<LoginIcon />}
+                            onClick={returnToLogin}
+                        >
+                            INICIAR SESIÓN
+                        </Button>
+                    </div>
+                    <HandlerSteps />
+                </div>
+            </div>
+        </div >
     )
 }
 

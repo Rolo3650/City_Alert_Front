@@ -8,6 +8,9 @@ const actionTypes = {
     // user
     SET_USER_INITIAL_STATE: 'SET_USER_INITIAL_STATE',
     SET_USER: 'SET_USER',
+
+    SET_SIGN_UP_INITIAL_STATE: 'SET_SIGN_UP_INITIAL_STATE',
+    SET_SIGN_UP: 'SET_SIGN_UP',
 }
 
 export { actionTypes }

@@ -24,6 +24,30 @@
 
     }
 
+    &.rows {
+
+        &-px {
+
+            &-56 {
+
+                grid-template-rows: 56px;
+    
+            }
+
+        }
+        
+        &-content {
+
+            &-min {
+
+                grid-template-rows: min-content;
+
+            }
+
+        }
+
+    }
+
     &.gap {
 
         &-row {

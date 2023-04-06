@@ -31,7 +31,9 @@ const LoginForm = () => {
         setLogin({ loading: true })
         const loged = await signIn()
         if (loged) {
-            navigateTo('/home')
+            setTimeout(() => {
+                navigateTo('/home')
+            }, 500);
         }
     }
 

@@ -1,7 +1,7 @@
-@import url(./rootVar.scss);
-@import url(./customize.scss);
-@import url(./main.scss);
-@import url(./navbar.scss);
-@import url(./publish.scss);
-@import url(./responsive.scss);
-@import url(./warning.scss);
+@use './Moduls/customize.scss';
+@use './Moduls/main.scss';
+@use './Moduls/navbar.scss';
+@use './Moduls/publish.scss';
+@use './Moduls/responsive.scss';
+@use './Moduls/rootVar.scss';
+@use './Moduls/warning.scss';

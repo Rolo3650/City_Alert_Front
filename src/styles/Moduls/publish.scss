@@ -113,22 +113,6 @@
                 cursor: pointer;
                 width: 23px;
             }
-
-            .list .contenido1 {
-                display: none;
-            }
-            
-            .list .contenido2 {
-                display: none;
-
-                .asentamiento.inactive {
-                    display: none;
-                }
-            }
-            
-            .list .contenido3 {
-                display: none;
-            }
         }
 
         :where(.options) {

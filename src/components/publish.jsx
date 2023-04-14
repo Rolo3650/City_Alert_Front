@@ -7,10 +7,25 @@ import add from '../styles/img/add-image.png';
 import '../styles/Moduls/publish.scss';
 
 const Publish = ({ mostrar }) => {
-    
+
     const estilo = {
         display: mostrar ? 'grid' : 'none'
     };
+
+    const [mostrarC1, setMostrarC1] = useState(false);
+    const C1 = () => {
+        setMostrarC1(!mostrarC1);
+    }
+
+    const [mostrarC2, setMostrarC2] = useState(false);
+    const C2 = () => {
+        setMostrarC2(!mostrarC2);
+    }
+
+    const [mostrarC3, setMostrarC3] = useState(false);
+    const C3 = () => {
+        setMostrarC3(!mostrarC3);
+    }
 
     return (
         <div className="contenedor2" style={estilo}>
@@ -28,8 +43,8 @@ const Publish = ({ mostrar }) => {
                         <div className="options">
                             <p>Agrega a tu publicación</p>
                             <ul className="list">
-                                <li><img src={alert} className="op" id="c1" /></li>
-                                <div className="contenido1">
+                                <li><img src={alert} className="op" id="c1" onClick={C1}/></li>
+                                {mostrarC1 &&<div className="contenido1">
                                     <label>Categoría:</label>
                                     <select id="categoria" name="id_categoria">
                                         <option value=""></option>
@@ -37,9 +52,9 @@ const Publish = ({ mostrar }) => {
                                         <option value="2">Alerta</option>
                                         <option value="3">Emergencia</option>
                                     </select>
-                                </div>
-                                <li><img src={location} className="op" id="c2" /></li>
-                                <div className="contenido2">
+                                </div>}
+                                <li><img src={location} className="op" id="c2" onClick={C2}/></li>
+                                {mostrarC2 &&<div className="contenido2">
                                     <label>Estado:</label>
                                     <select name="Estado" id="estado">
                                         <option value=""></option>
@@ -71,11 +86,11 @@ const Publish = ({ mostrar }) => {
                                         </option>
 
                                     </select>
-                                </div>
-                                <li><img src={add} className="op" id="c3" /></li>
-                                <div className="contenido3">
+                                </div>}
+                                <li><img src={add} className="op" id="c3" onClick={C3}/></li>
+                                {mostrarC3 &&<div className="contenido3">
                                     <input type="text" placeholder="Agrega el link de tu imagen" name="ruta" />
-                                </div>
+                                </div>}
                             </ul>
                         </div>
                         <button id="btn-publicar">Publicar</button>

@@ -61,7 +61,7 @@ function Middle() {
                                                     name="id_publicacion"/>
                                             <input type="text" name="comentario"
                                                         placeholder="Escribe un Comentario..." id="create-comment"
-                                                        class="comment"/>
+                                                        className="comment"/>
                                             <input type="submit" value="Enviar" class="btn btn-primary"/>
                                         </form>
                                     </div>

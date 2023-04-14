@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import user from '../styles/img/user.png';
 import alert from '../styles/img/alert-caution.png';
 import location from '../styles/img/location.png';
 import add from '../styles/img/add-image.png';
 
-function Publish() {
+import '../styles/Moduls/publish.scss';
+
+const Publish = ({ mostrar }) => {
+    
+    const estilo = {
+        display: mostrar ? 'grid' : 'none'
+    };
+
     return (
-        <div className="contenedor">
+        <div className="contenedor2" style={estilo}>
             <div className="wrapper">
                 <section className="post">
                     <header>Crear Publicación</header>
@@ -42,42 +49,41 @@ function Publish() {
                                         </option>
 
                                     </select>
-                                    <br/>
-                                        <label>Municipio:</label>
-                                        <select className="municipio-select" name="Municipio" id="municipio">
-                                            <option value=""></option>
-                                            municipios
-                                            <option value="<%=municipio.obtenerIdMunicipio()%>">
-                                                obtener municipios
-                                            </option>
+                                    <br />
+                                    <label>Municipio:</label>
+                                    <select className="municipio-select" name="Municipio" id="municipio">
+                                        <option value=""></option>
+                                        municipios
+                                        <option value="<%=municipio.obtenerIdMunicipio()%>">
+                                            obtener municipios
+                                        </option>
 
-                                        </select>
-                                        <br/>
-                                            <label>Nombre:</label>
-                                            <select className="asentamiento-select" name="id_asentamiento" id="nombre">
-                                                <option value=""></option>
-                                                asentamiento
-                                                <option
-                                                    className="asentamiento inactive municipioId-<%=asentamiento.obtenerMunicipio().obtenerIdMunicipio()%>-"
-                                                    value="<%=asentamiento.obtenerIdAsentamiento()%>">
-                                                    obtener asentamiento
-                                                </option>
+                                    </select>
+                                    <br />
+                                    <label>Nombre:</label>
+                                    <select className="asentamiento-select" name="id_asentamiento" id="nombre">
+                                        <option value=""></option>
+                                        asentamiento
+                                        <option
+                                            className="asentamiento inactive municipioId-<%=asentamiento.obtenerMunicipio().obtenerIdMunicipio()%>-"
+                                            value="<%=asentamiento.obtenerIdAsentamiento()%>">
+                                            obtener asentamiento
+                                        </option>
 
-                                            </select>
+                                    </select>
                                 </div>
-                                        <li><img src={add} className="op" id="c3" /></li>
-                                        <div className="contenido3">
-                                            <input type="text" placeholder="Agrega el link de tu imagen" name="ruta" />
-                                        </div>
+                                <li><img src={add} className="op" id="c3" /></li>
+                                <div className="contenido3">
+                                    <input type="text" placeholder="Agrega el link de tu imagen" name="ruta" />
+                                </div>
                             </ul>
                         </div>
-                                <button id="btn-publicar">Publicar</button>
-                               <input type="hidden" name="id_usuario" value="<%= usuario.obtenerIdUsuario() %>"/>                           
+                        <button id="btn-publicar">Publicar</button>
+                        <input type="hidden" name="id_usuario" value="<%= usuario.obtenerIdUsuario() %>" />
                     </form>
                 </section>
             </div>
         </div>
-                    )
+    )
 }
-
-                    export default Publish
+export default Publish

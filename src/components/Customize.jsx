@@ -1,8 +1,14 @@
-import React from "react";
+import React,{ useState } from "react";
 
-function Customize(){
+const Customize = ({open}) =>{
+
+    const style = {
+        display: open ? 'grid' : 'none'
+    };
+
     return(
-        <div className="card">
+        <div className="customize-theme" style={style}>
+            <div className="card">
             <h2>Editar</h2>
             <p className="text-muted">Manega el fondo, colores y tamaño de letra </p>
             <div className="font-size">
@@ -19,9 +25,9 @@ function Customize(){
                     <h3>Aa</h3>
                 </div>
             </div>
-            <div class="color">
+            <div className="color">
                 <h4>Color</h4>
-                <div class="choose-color">
+                <div className="choose-color">
                     <span className="color-1 active"></span>
                     <span className="color-2 active"></span>
                     <span className="color-3 active"></span>
@@ -40,6 +46,7 @@ function Customize(){
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

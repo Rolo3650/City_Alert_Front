@@ -3,9 +3,9 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { Button, CircularProgress, FormControl, FormGroup, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField } from '@mui/material'
 import React from 'react'
 import { useEffect } from 'react';
-import { useErrorHandler } from '../../hooks/error/useErrorHandler';
-import { useLogin } from '../../hooks/user/useLogin';
-import { config } from '../../utils/config'
+import { useErrorHandler } from '../../../hooks/error/useErrorHandler';
+import { useLogin } from '../../../hooks/user/useLogin';
+import { config } from '../../../utils/config'
 import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {

@@ -18,6 +18,11 @@ const reducerObject = (state, payload) => {
         // sign up
         [actionTypes.SET_SIGN_UP_INITIAL_STATE]: { ...state, sign_up: initial_state.sign_up },
         [actionTypes.SET_SIGN_UP]: { ...state, sign_up: payload },
+
+        // publications
+        [actionTypes.SET_PUBLICATIONS_INITIAL_STATE]: { ...state, publications: initial_state.publications },
+        [actionTypes.SET_PUBLICATIONS]: { ...state, publications: payload },
+
     })
 }
 

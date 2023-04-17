@@ -11,11 +11,17 @@
 @import './containers/background.scss'; // background
 @import './containers/card.scss'; // card
 @import './containers/step.scss'; // step
+@import './containers/header.scss'; // header
+@import './containers/layout.scss'; // layout
+@import './containers/aside.scss'; // aside.scss
 
 // components 
 @import './components/image.scss'; // imgs
+@import './components/publications.scss'; // publications
 
 // snipets 
 @import './snipets/margin.scss'; // margin
+@import './snipets/sizing.scss'; // sizing
 @import './snipets/text.scss'; // text
 @import './snipets/grid.scss'; // grid
+@import './snipets/border.scss'; // border

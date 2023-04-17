@@ -2,6 +2,12 @@
 
     &-color {
 
+        &-grey {
+
+            color: $grey;
+
+        }
+
         &-dark-grey {
 
             color: $dark-grey;
@@ -17,6 +23,12 @@
     }
 
     &-weight {
+
+        &-400 {
+
+            font-weight: 400;
+
+        }
 
         &-500 {
 
@@ -41,6 +53,12 @@
     &-poppins {
 
         font-family: 'Poppins', sans-serif;
+
+    }
+
+    &-nowrap {
+
+        white-space: nowrap;
 
     }
 

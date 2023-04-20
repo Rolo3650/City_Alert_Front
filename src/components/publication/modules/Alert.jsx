@@ -5,7 +5,7 @@ import { config } from '../../../utils/config'
 const AlertCustom = ({ alert }) => {
 
     const returnAlert = () => {
-        if (alert.id_publication_type == 0) {
+        if (alert.id_publication_type == 3) {
             return <Alert
                 severity='warning'
                 variant='filled'
@@ -19,7 +19,7 @@ const AlertCustom = ({ alert }) => {
             >
                 {alert.publication_type ?? ""}
             </Alert>
-        } else if (alert.id_publication_type == 1) {
+        } else if (alert.id_publication_type == 2) {
             return <Alert
                 severity='warning'
                 variant='filled'
@@ -33,7 +33,7 @@ const AlertCustom = ({ alert }) => {
             >
                 {alert.publication_type ?? ""}
             </Alert>
-        } else if (alert.id_publication_type == 2) {
+        } else if (alert.id_publication_type == 1) {
             return <Alert
                 severity='warning'
                 variant='filled'

@@ -1,3 +1,4 @@
+import { getNewPublication } from "./publicartion/newPublication"
 import { getPublications } from "./publicartion/publications"
 import { getLogin } from "./user/login"
 import { getSignUp } from "./user/signUp"
@@ -8,6 +9,7 @@ const initial_state = {
     user: getUser(),
     sign_up: getSignUp(),
     publications: getPublications(),
+    new_publication: getNewPublication(),
 }
 
 export { initial_state }

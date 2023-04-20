@@ -6,6 +6,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { config } from '../../../utils/config';
 
 const HeaderOne = () => {
+
+    const modalShow = (modal) => {
+        $(`#${modal}`).modal('show');
+    }
+
     return (
         <div className='header header-one'>
             <div className='first'>
@@ -35,6 +40,9 @@ const HeaderOne = () => {
                         paddingY: "9px",
                         minWidth: "130px",
                         marginRight: "20px",
+                    }}
+                    onClick={() => {
+                        modalShow('newPublication')
                     }}
                 >
                     Crear

@@ -23,6 +23,10 @@ const reducerObject = (state, payload) => {
         [actionTypes.SET_PUBLICATIONS_INITIAL_STATE]: { ...state, publications: initial_state.publications },
         [actionTypes.SET_PUBLICATIONS]: { ...state, publications: payload },
 
+        // new publication
+        [actionTypes.SET_NEW_PUBLICATION_INITIAL_STATE]: { ...state, new_publication: initial_state.new_publication },
+        [actionTypes.SET_NEW_PUBLICATION]: { ...state, new_publication: payload },
+
     })
 }
 

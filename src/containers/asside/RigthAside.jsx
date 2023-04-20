@@ -6,7 +6,7 @@ const RightAside = ({ children }) => {
 
     const [lastX, setLastX] = useState(0);
     const [width, setWidth] = useState(400);
-    const [maxWidth, setMaxWidth] = useState(0);
+    const [maxWidth, setMaxWidth] = useState(400);
 
     const handleWidth = () => {
         let windowWidth = window.innerWidth
@@ -39,7 +39,9 @@ const RightAside = ({ children }) => {
     }
 
     useEffect(() => {
-        window.addEventListener('load', () => handleWidth())
+        setTimeout(() => {
+            handleWidth()
+        }, 500)
     }, [])
 
     return (

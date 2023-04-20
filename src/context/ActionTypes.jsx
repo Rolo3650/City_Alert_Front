@@ -19,6 +19,10 @@ const actionTypes = {
 
     // coments
     SET_PUBLICATIONS_COMENTS: 'SET_PUBLICATIONS_COMENTS',
+
+    // new publication
+    SET_NEW_PUBLICATION_INITIAL_STATE: 'SET_NEW_PUBLICATION_INITIAL_STATE',
+    SET_NEW_PUBLICATION: 'SET_NEW_PUBLICATION',
 }
 
 export { actionTypes }

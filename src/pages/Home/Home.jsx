@@ -10,6 +10,7 @@ import { Backdrop, CircularProgress } from '@mui/material'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useUser } from '../../hooks/user/useUser'
+import { NewPublicationModal } from '../../containers/modal/publication/NewPublicationModal'
 
 const Home = () => {
 
@@ -56,6 +57,7 @@ const Home = () => {
                     </RightAside>
                 </div>
             </LayoutOne>
+            <NewPublicationModal />
             <Backdrop
                 open={openBackDrop}
             >

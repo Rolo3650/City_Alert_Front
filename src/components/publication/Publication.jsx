@@ -9,7 +9,7 @@ import { Coments } from '../../containers/publication/modules/Coments'
 const Publication = ({ publication }) => {
 
     return (
-        <div className='publication border-rounded-all-10 background background-white px-4 py-3'>
+        <div className='publication border-rounded-all-10 background background-white px-4 py-3 mb-3'>
             <div className='d-flex align-items-center mb-3'>
                 <div>
                     <Avatar />

@@ -46,7 +46,7 @@ const NewPublication = () => {
                             icon={returnStepIcon(<SourceIcon style={returnStepIconColor(0)} />, 1)}
                         >
                             <span className={returnStepClass(0)}>
-                                Datos Personales
+                                Reporte de la situación
                             </span>
                         </StepLabel>
                     </Step>

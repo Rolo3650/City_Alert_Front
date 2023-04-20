@@ -8,7 +8,7 @@ import { Theme } from './containers/theme/Index'
 import { LocalizationProvider } from '@mui/x-date-pickers-pro'
 import { AdapterMoment } from '@mui/x-date-pickers-pro/AdapterMoment'
 import 'bootstrap/scss/bootstrap.scss'
-import './styles/scss/index.scss'
+import './styles/SCSS/index.scss'
 import '@sweetalert2/themes/material-ui'
 import 'bootstrap/dist/js/bootstrap.min.js';
 

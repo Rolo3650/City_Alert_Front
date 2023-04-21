@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Index } from '../../containers/user/signUp/ignUpForm'
+import { Index } from '../../containers/user/signUp/SignUpForm'
 import { Backdrop, CircularProgress } from '@mui/material'
 import { useUser } from '../../hooks/user/useUser'
 import { useNavigate } from 'react-router-dom'

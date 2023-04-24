@@ -1,15 +1,28 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { LayoutTwo } from '../../containers/layout/LayoutTwo'
 import { HeaderTwo } from '../../components/modules/header/HeaderTwo'
 import { InfoUser } from '../../containers/user/info/InfoUser'
 import { Backdrop, CircularProgress } from '@mui/material'
 import { NewPublicationModal } from '../../containers/modal/publication/NewPublicationModal'
+import { useUser } from '../../hooks/user/useUser'
 
 const User = () => {
 
     const { id } = useParams()
     const [openBackDrop, setOpenBackDrop] = useState(true)
+    const navigateTo = useNavigate()
+    const { user } = useUser()
+
+    const init = () => {
+        if (!user?.id_user) {
+            navigateTo('/')
+        }
+    }
+
+    useEffect(() => {
+        init()
+    }, [])
 
     return (
         <LayoutTwo

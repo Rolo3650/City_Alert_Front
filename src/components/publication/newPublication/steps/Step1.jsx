@@ -24,7 +24,7 @@ const Step1 = () => {
         setPublicationType({ value: ev.target.value, error: '' })
     }
 
-    const returnSexsOptions = () => publicationTypes?.map(publicationType =>
+    const returnPublicationsOptions = () => publicationTypes?.map(publicationType =>
         <MenuItem value={publicationType?.id_publicationType} key={publicationType?.id_publicationType}>{publicationType?.publicationType}</MenuItem>
     )
 
@@ -69,7 +69,7 @@ const Step1 = () => {
                                 value={publication_type.value}
                                 onChange={onChangePublicationType}
                             >
-                                {returnSexsOptions()}
+                                {returnPublicationsOptions()}
                             </Select>
                         </FormControl>
                     </div>

@@ -14,6 +14,7 @@ const colors = () => ({
 
     // viants
     LIGHT_SECONDARY: "#A3cbc0",
+    DARK_SECONDARY: "#538b80",
 })
 
 export { colors }

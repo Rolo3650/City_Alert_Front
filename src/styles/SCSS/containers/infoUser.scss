@@ -1,0 +1,69 @@
+.info-user {
+
+    // display: grid;
+    justify-content: center;
+    width: 100%;
+
+    & .perfil-image-container {
+
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        justify-content: center;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+        @media screen and (min-width: 768px) {
+            height: 40vh;
+            width: 70vw;
+        }
+
+        @media screen and (max-width: 768px) {
+            height: 30vh;
+            width: 100%;            
+        }
+
+        & .avatar {
+            position: relative;
+            top: 60%;
+
+            &::before {
+                position: absolute;
+                top: 5%;
+                left: 5%;
+                content: "";
+                display: block;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                z-index: 20;
+            }
+        }
+
+    }
+
+    &.info-user-light {
+
+        & .perfil-image-container {
+
+            background-color: $secondary;
+
+        }
+
+        & .avatar {
+
+            &::before {
+                background-color: $white;
+            }
+        }
+
+    }
+
+    & .info {
+
+        width: auto;
+        max-width: 600px;
+
+    } 
+
+}

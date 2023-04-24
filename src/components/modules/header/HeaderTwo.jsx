@@ -1,15 +1,17 @@
 import React from 'react'
-import { SearchOne } from '../../searchBar/SearchOne'
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { Avatar, Button, IconButton, } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
-import { config } from '../../../utils/config';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../../hooks/user/useUser';
+import { useColors } from '../../../hooks/themes/useColors';
+import { SearchTwo } from '../../searchBar/SearchTwo';
+import HomeIcon from '@mui/icons-material/Home';
 
-const HeaderOne = ({ setOpenBackDrop }) => {
+const HeaderTwo = () => {
 
     const { user } = useUser();
+    const { colors, theme } = useColors()
     const navigateTo = useNavigate()
 
     const modalShow = (modal) => {
@@ -17,14 +19,15 @@ const HeaderOne = ({ setOpenBackDrop }) => {
     }
 
     const onNavigateUser = () => {
-        setOpenBackDrop(true);
-        setTimeout(() => {
-            navigateTo(`/user/${user.id_user ?? 0}`)
-        }, 500)
+        navigateTo(`/user/${user.id_user ?? 0}`)
+    }
+
+    const onNavigateHome = () => {
+        navigateTo(`/home`)
     }
 
     return (
-        <div className='header header-one'>
+        <div className={`header header-two header-two-${theme}`}>
             <div className='first'>
                 <h2 className='text-weight-600 text-nowrap text'>City Alert</h2>
                 <div className='button'>
@@ -32,19 +35,34 @@ const HeaderOne = ({ setOpenBackDrop }) => {
                     >
                         <MenuIcon
                             sx={{
-                                color: config.colors.WHITE
+                                color: colors?.$color_9
                             }}
                         />
                     </IconButton>
                 </div>
             </div>
             <div className='second'>
-                <SearchOne />
+                <SearchTwo />
             </div>
             <div className='third'>
                 <Button
                     variant='contained'
-                    color='lightPrimary'
+                    color='secondary'
+                    endIcon={<HomeIcon />}
+                    sx={{
+                        fontWeight: "800",
+                        borderRadius: "30px",
+                        paddingY: "9px",
+                        minWidth: "130px",
+                        marginRight: "20px",
+                    }}
+                    onClick={onNavigateHome}
+                >
+                    Inicio
+                </Button>
+                <Button
+                    variant='contained'
+                    color='secondary'
                     endIcon={<AddCircleIcon />}
                     sx={{
                         fontWeight: "800",
@@ -61,15 +79,13 @@ const HeaderOne = ({ setOpenBackDrop }) => {
                 </Button>
                 <Avatar
                     onClick={onNavigateUser}
-                    sx={{
-                        ":hover": {
-                            cursor: "pointer"
-                        }
-                    }}
+                    sx={{ ":hover": {
+                        cursor: "pointer"
+                    } }}
                 />
             </div>
         </div>
     )
 }
 
-export { HeaderOne }
+export { HeaderTwo }

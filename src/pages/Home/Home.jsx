@@ -37,7 +37,7 @@ const Home = () => {
     return (
         <>
             <LayoutOne
-                header={<HeaderOne />}
+                header={<HeaderOne setOpenBackDrop={setOpenBackDrop} />}
             >
                 <div className='left h-100 background background-grey'>
                     <LeftAside

@@ -1,39 +1,17 @@
 import { ThemeProvider, createTheme } from '@mui/material';
 import React from 'react'
 import { config } from '../../utils/config';
+import { useTheme } from '../../hooks/themes/useTheme';
 
 const Theme = (props) => {
 
-    const theme = createTheme({
-        palette: {
-            primary: {
-                main: config.colors.PRIMARY,
-            },
-            secondary: {
-                main: config.colors.SECONDARY,
-            },
-            lightPrimary: {
-                main: config.colors.WHITE,
-                contrastText: config.colors.SECONDARY,
-            },
-            red: {
-                main: config.colors.RED,
-                contrastText: config.colors.WHITE,
-            },
-            yellow: {
-                main: config.colors.YELLOW,
-                contrastText: config.colors.WHITE,
-            },
-            orange: {
-                main: config.colors.ORANGE,
-                contrastText: config.colors.WHITE,
-            }
-        },
-    });
+    const { theme } = useTheme()
+
+    const returnTheme = createTheme(theme);
 
 
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={returnTheme}>
             {props.children}
         </ThemeProvider>
     )

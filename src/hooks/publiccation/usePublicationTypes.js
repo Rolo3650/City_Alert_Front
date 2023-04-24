@@ -11,7 +11,7 @@ const usePublicationType = () => {
         if (response?.ok) {
             return response?.publicationTypes_array
         } else {
-            return null;
+            return [];
         }
     }
 

@@ -1,5 +1,6 @@
 import { ImageList, ImageListItem } from '@mui/material'
 import React from 'react'
+import LazyLoad from 'react-lazy-load'
 
 const Images = ({ images }) => {
     return (
@@ -23,12 +24,14 @@ const Images = ({ images }) => {
                     }}
                     key={index}
                 >
-                    <img
-                        className='w-100'
-                        src={image.image ?? ""}
-                        alt="image" 
-                        loading='lazy'
-                    />
+                    <LazyLoad>
+                        <img
+                            className='w-100'
+                            src={image.image ?? ""}
+                            alt="image"
+                            loading='lazy'
+                        />
+                    </LazyLoad>
                 </ImageListItem>
             ))}
         </ImageList>

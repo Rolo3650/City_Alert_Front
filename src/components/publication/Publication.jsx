@@ -5,14 +5,31 @@ import { Description } from './modules/Description'
 import { Images } from './modules/Images'
 import { AlertCustom } from './modules/Alert'
 import { Coments } from '../../containers/publication/modules/Coments'
+import { useNavigate } from 'react-router-dom'
 
-const Publication = ({ publication }) => {
+const Publication = ({ publication, setOpenBackDrop }) => {
+
+    const navigateTo = useNavigate()
+
+    const navigateUser = () => {
+        setOpenBackDrop(true)
+        setTimeout(() => {
+            navigateTo('/user/' + publication?.user?.id_user)
+        }, 500)
+    }
 
     return (
         <div className='publication border-rounded-all-10 background background-white px-4 py-3 mb-3'>
             <div className='d-flex align-items-center mb-3'>
                 <div>
-                    <Avatar />
+                    <Avatar
+                        onClick={navigateUser}
+                        sx={{
+                            ":hover": {
+                                cursor: "pointer"
+                            }
+                        }}
+                    />
                 </div>
                 <div className='mx-3 w-100' >
                     <h6 className='m-0 text-poppins text-weight-600 mb-1'>
@@ -36,7 +53,7 @@ const Publication = ({ publication }) => {
             {publication?.publication_type &&
                 <AlertCustom alert={publication?.publication_type} />
             }
-            <Coments publication={publication} />
+            <Coments publication={publication} setOpenBackDrop={setOpenBackDrop} />
         </div>
     )
 }

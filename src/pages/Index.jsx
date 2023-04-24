@@ -8,7 +8,7 @@ import { useSignUp } from '../hooks/user/useSignUp'
 
 const Index = () => {
 
-    const [openBackDrop, setOpenBackDrop] = useState(false)
+    const [openBackDrop, setOpenBackDrop] = useState(true)
     const { setSignUpInitialState } = useSignUp()
     const { user } = useUser()
     const navigateTo = useNavigate()
@@ -22,6 +22,9 @@ const Index = () => {
     }
 
     useEffect(() => {
+        setTimeout(() => {
+            setOpenBackDrop(false)
+        }, 500);
         if (user?.id_user) {
             setOpenBackDrop(true)
             setTimeout(() => {

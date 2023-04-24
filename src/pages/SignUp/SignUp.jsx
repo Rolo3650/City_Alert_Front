@@ -6,11 +6,14 @@ import { useNavigate } from 'react-router-dom'
 
 const SignUp = () => {
 
-    const [openBackDrop, setOpenBackDrop] = useState(false)
+    const [openBackDrop, setOpenBackDrop] = useState(true)
     const { user } = useUser()
     const navigateTo = useNavigate()
 
     useEffect(() => {
+        setTimeout(() => {
+            setOpenBackDrop(false)
+        }, 500)
         if (user?.id_user) {
             setOpenBackDrop(true)
             setTimeout(() => {

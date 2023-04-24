@@ -47,7 +47,7 @@ const Home = () => {
                     </LeftAside>
                 </div>
                 <div className='middle p-4 background background-grey'>
-                    <Publications />
+                    <Publications setOpenBackDrop={setOpenBackDrop} />
                 </div>
                 <div className='right background background-grey'>
                     <RightAside

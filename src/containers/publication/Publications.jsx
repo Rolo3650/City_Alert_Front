@@ -3,7 +3,7 @@ import { usePublication } from '../../hooks/publiccation/usePublication'
 import { SkeletonPublication } from '../../components/publication/SkeletonPublication';
 import { Publication } from '../../components/publication/Publication';
 
-const Publications = () => {
+const Publications = ({ setOpenBackDrop }) => {
 
     const { publications } = usePublication();
     const { loading, publicationList } = publications;
@@ -12,7 +12,7 @@ const Publications = () => {
 
         if (publicationList?.length > 0) {
             return publicationList?.map((publication, index) => (
-                <Publication publication={publication} key={index} />
+                <Publication publication={publication} key={index} setOpenBackDrop={setOpenBackDrop} />
             ))
         }
     }

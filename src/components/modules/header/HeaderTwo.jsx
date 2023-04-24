@@ -8,7 +8,7 @@ import { useColors } from '../../../hooks/themes/useColors';
 import { SearchTwo } from '../../searchBar/SearchTwo';
 import HomeIcon from '@mui/icons-material/Home';
 
-const HeaderTwo = () => {
+const HeaderTwo = ({ setOpenBackDrop }) => {
 
     const { user } = useUser();
     const { colors, theme } = useColors()
@@ -19,11 +19,19 @@ const HeaderTwo = () => {
     }
 
     const onNavigateUser = () => {
-        navigateTo(`/user/${user.id_user ?? 0}`)
+        if (!location.pathname.includes('/user/')) {
+            setOpenBackDrop(true)
+            setTimeout(() => {
+                navigateTo(`/user/${user.id_user ?? 0}`)
+            }, 500)
+        }
     }
 
     const onNavigateHome = () => {
-        navigateTo(`/home`)
+        setOpenBackDrop(true)
+        setTimeout(() => {
+            navigateTo(`/home`)
+        }, 500)
     }
 
     return (
@@ -79,9 +87,11 @@ const HeaderTwo = () => {
                 </Button>
                 <Avatar
                     onClick={onNavigateUser}
-                    sx={{ ":hover": {
-                        cursor: "pointer"
-                    } }}
+                    sx={{
+                        ":hover": {
+                            cursor: "pointer"
+                        }
+                    }}
                 />
             </div>
         </div>

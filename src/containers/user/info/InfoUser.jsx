@@ -6,7 +6,7 @@ import { useUser } from '../../../hooks/user/useUser'
 import { config } from '../../../utils/config'
 import moment from 'moment'
 
-const InfoUser = () => {
+const InfoUser = ({ setOpenBackDrop }) => {
 
     const [user, setUser] = useState({});
     const { colors, theme } = useColors()
@@ -15,15 +15,20 @@ const InfoUser = () => {
     const { getUser } = useUser();
 
     const navigateHome = () => {
-        navigateTo('/home')
+        setOpenBackDrop(true)
+        setTimeout(() => {
+            navigateTo('/home')
+        }, 500)
     }
 
     const init = async () => {
         if (config.regex.number.test(id)) {
             const userApi = await getUser(parseInt(id))
             setUser(userApi)
-            console.log(userApi)
         }
+        setTimeout(() => {
+            setOpenBackDrop(false)
+        }, 500)
     }
 
     useEffect(() => {

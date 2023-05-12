@@ -24,20 +24,27 @@ const useUser = () => {
     }
 
     const getUser = async (id) => {
-        let reponse = await getUserApi.request({"id_user": id})
+        let reponse = await getUserApi.request({ "id_user": id })
         if (reponse.ok) {
             return reponse.user;
         } else {
             return {}
         }
-    } 
+    }
+
+    const signOut = async (setBackDrop) => {
+        removeUserCookie("user")
+        setBackDrop(true)
+        setTimeout(() => { window.location.assign('/') }, 500)
+    }
 
     return {
         setUserFromCookie,
         setUserInitialState,
         user: state.user,
         setUser,
-        getUser
+        getUser,
+        signOut
     }
 }
 

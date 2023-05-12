@@ -15,15 +15,15 @@ const useNewPublication = () => {
     }
 
     const setDescription = (payload) => {
-        dispatch({ type: actionTypes.SET_NEW_PUBLICATION, payload: {...state.new_publication, description: { ...state.description, ...payload }} });
+        dispatch({ type: actionTypes.SET_NEW_PUBLICATION, payload: {...state.new_publication, description: { ...state?.new_publication?.description, ...payload }} });
     }
 
     const setImgs = (payload) => {
-        dispatch({ type: actionTypes.SET_NEW_PUBLICATION, payload: {...state.new_publication, images: { ...state.images, ...payload }} });
+        dispatch({ type: actionTypes.SET_NEW_PUBLICATION, payload: {...state.new_publication, images: { ...state?.new_publication?.images, ...payload }} });
     }
 
     const setPublicationType = (payload) => {
-        dispatch({ type: actionTypes.SET_NEW_PUBLICATION, payload: {...state.new_publication, publication_type: { ...state.publication_type, ...payload }} });
+        dispatch({ type: actionTypes.SET_NEW_PUBLICATION, payload: {...state.new_publication, publication_type: { ...state?.new_publication?.publication_type, ...payload }} });
     }
 
     const setStep = (payload) => {

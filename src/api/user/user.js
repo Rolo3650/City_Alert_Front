@@ -9,6 +9,7 @@ const LOGIN = (params) => api.post('sign-in', params);
 const GET_SEXS = () => api.get('get-sexs');
 
 const SIGN_UP = (params) => api.post('sign-up', params);
+const EDIT_USER = (params) => api.post('user-update', params);
 
 export {
     GET_USERS,
@@ -16,5 +17,6 @@ export {
     LOGIN,
     GET_SEXS,
     USER_REGISTERED,
-    SIGN_UP
+    SIGN_UP,
+    EDIT_USER
 };

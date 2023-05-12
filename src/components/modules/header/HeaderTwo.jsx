@@ -92,6 +92,7 @@ const HeaderTwo = ({ setOpenBackDrop }) => {
                             cursor: "pointer"
                         }
                     }}
+                    src={`${user?.avatar?.url != '_' ? user?.avatar?.url : "" }`}
                 />
             </div>
         </div>

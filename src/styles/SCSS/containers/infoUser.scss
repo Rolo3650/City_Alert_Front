@@ -26,8 +26,9 @@
         & .avatar {
             position: relative;
             top: 60%;
+            height: min-content;
 
-            &::before {
+            &.before::before {
                 position: absolute;
                 top: 5%;
                 left: 5%;

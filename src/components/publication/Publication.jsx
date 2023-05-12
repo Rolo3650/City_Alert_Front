@@ -29,6 +29,7 @@ const Publication = ({ publication, setOpenBackDrop }) => {
                                 cursor: "pointer"
                             }
                         }}
+                        src={`${publication?.user?.avatar?.url != '_' ? publication?.user?.avatar?.url : "" }`}
                     />
                 </div>
                 <div className='mx-3 w-100' >

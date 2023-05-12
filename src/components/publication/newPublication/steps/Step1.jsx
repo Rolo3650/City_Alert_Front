@@ -1,4 +1,4 @@
-import { FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
+import { FormControl, Input, InputLabel, MenuItem, OutlinedInput, Select, TextField } from '@mui/material'
 import React from 'react'
 import { useNewPublication } from '../../../../hooks/publiccation/useNewPublication'
 import { useEffect } from 'react'
@@ -17,7 +17,13 @@ const Step1 = () => {
     }
 
     const onChangeURL = (ev) => {
-        setImgs({ value: [ev.target.value], error: '' })
+        var archivo = ev.target.files[0];
+        var reader = new FileReader();
+        reader.onload = () => {
+            setImgs({ value: [reader.result], error: '' })
+        }
+
+        reader.readAsDataURL(archivo);
     }
 
     const onChangePublicationType = (ev) => {
@@ -52,16 +58,8 @@ const Step1 = () => {
                         onChange={onChangeDescription}
                     />
                 </div>
-                <div className='grid gap-column-20 columns-mobile-to-1 mb-4'>
-                    <TextField
-                        label='Link de Imagen'
-                        variant='outlined'
-                        value={images.value[0]}
-                        onChange={onChangeURL}
-                    />
-                </div>
-                <div className='grid columns-2 gap-column-20 columns-mobile-to-1 mb-4 gap-row-20'>
-                    <div>
+                <div className='grid columns-2 gap-column-20 columns-mobile-to-1 mb-4'>
+                    <div className='mb-4'>
                         <FormControl fullWidth>
                             <InputLabel>Tipo de Publicación</InputLabel>
                             <Select
@@ -73,6 +71,23 @@ const Step1 = () => {
                             </Select>
                         </FormControl>
                     </div>
+                    <div>
+                        <FormControl fullWidth>
+                            <InputLabel
+                                shrink={true}
+                                htmlFor="outlined-adornment-input"
+                            >Imagen de Publicación</InputLabel>
+                            <Input
+                                id='outlined-adornment-input'
+                                type='file'
+                                label='Imagen de Publicación'
+                                accept='.jpg, .jpeg, .png'
+                                onChange={onChangeURL}
+                            />
+                        </FormControl>
+                    </div>
+                </div>
+                <div className='grid columns-2 gap-column-20 columns-mobile-to-1 mb-4 gap-row-20'>
                 </div>
             </div>
         </div>

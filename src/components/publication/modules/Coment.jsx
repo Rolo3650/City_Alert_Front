@@ -1,6 +1,6 @@
 import { Avatar } from '@mui/material'
 import moment from 'moment'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Coment = ({ coment, setOpenBackDrop }) => {
@@ -25,6 +25,7 @@ const Coment = ({ coment, setOpenBackDrop }) => {
                                 cursor: 'pointer'
                             }
                         }}
+                        src={`${coment?.user?.avatar?.url != '_' ? coment?.user?.avatar?.url : ""}`}
                     />
                 </div>
                 <div className='mx-3 w-100' >

@@ -36,7 +36,10 @@ const useLogin = () => {
         }
         const resLogin = await apiLogin.request(data)
         if (resLogin?.ok) {
-            setUserCookie("user", resLogin.user)
+            let user = { ...resLogin.user }
+            user.avatar = {}
+
+            setUserCookie("user", user)
             setLoginInitialState()
             setUser(resLogin.user)
             return true

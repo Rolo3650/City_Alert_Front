@@ -14,6 +14,10 @@ const reducerObject = (state, payload) => {
         // user
         [actionTypes.SET_USER_INITIAL_STATE]: { ...state, user: initial_state.user },
         [actionTypes.SET_USER]: { ...state, user: payload },
+
+        // edit user
+        [actionTypes.SET_EDIT_USER_INITIAL_STATE]: { ...state, edit_user: initial_state.edit_user },
+        [actionTypes.SET_EDIT_USER]: { ...state, edit_user: payload },
         
         // sign up
         [actionTypes.SET_SIGN_UP_INITIAL_STATE]: { ...state, sign_up: initial_state.sign_up },

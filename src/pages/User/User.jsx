@@ -29,7 +29,7 @@ const User = () => {
             header={<HeaderTwo setOpenBackDrop={setOpenBackDrop} />}
         >
             <div className='h-100 w-100 background background-grey d-flex justify-content-center px-5'>
-                <InfoUser setOpenBackDrop={setOpenBackDrop} />
+                <InfoUser setOpenBackDrop={setOpenBackDrop} openBackDrop={openBackDrop} />
             </div>
             <Backdrop
                 open={openBackDrop}

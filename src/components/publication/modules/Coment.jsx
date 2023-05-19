@@ -29,7 +29,7 @@ const Coment = ({ coment, setOpenBackDrop }) => {
                     />
                 </div>
                 <div className='mx-3 w-100' >
-                    <h6 className='m-0 text-poppins text-weight-600 mb-1'>
+                    <h6 className='m-0 text-poppins text-truncate text-weight-600 mb-1'>
                         {coment?.user?.person?.name ?? ""} ~ {coment?.user?.email ?? ""}
                     </h6>
                     <p className='m-0 text-poppins text-weight-400 text-color-grey'>

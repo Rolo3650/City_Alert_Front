@@ -51,7 +51,7 @@ const InfoUser = ({ setOpenBackDrop, openBackDrop }) => {
                             borderStyle: "solid",
                             borderWidth: "5px",
                         }}
-                        src={`${user?.avatar?.url != '_' ? user?.avatar?.url : ""}`}
+                        src={`${userApi?.avatar?.url != '_' ? userApi?.avatar?.url : ""}`}
                     />
                 </div>
             </div>

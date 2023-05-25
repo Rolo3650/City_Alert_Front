@@ -27,6 +27,10 @@ const reducerObject = (state, payload) => {
         [actionTypes.SET_PUBLICATIONS_INITIAL_STATE]: { ...state, publications: initial_state.publications },
         [actionTypes.SET_PUBLICATIONS]: { ...state, publications: payload },
 
+        // publications resume
+        [actionTypes.SET_PUBLICATIONS_RESUME_INITIAL_STATE]: { ...state, publications_resume: initial_state.publications_resume },
+        [actionTypes.SET_PUBLICATIONS_RESUME]: { ...state, publications_resume: payload },
+
         // new publication
         [actionTypes.SET_NEW_PUBLICATION_INITIAL_STATE]: { ...state, new_publication: initial_state.new_publication },
         [actionTypes.SET_NEW_PUBLICATION]: { ...state, new_publication: payload },

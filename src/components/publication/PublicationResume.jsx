@@ -1,13 +1,10 @@
 import { Avatar } from '@mui/material'
-import moment from 'moment/moment'
-import React, { useEffect } from 'react'
+import moment from 'moment'
+import React from 'react'
 import { Description } from './modules/Description'
-import { Images } from './modules/Images'
-import { AlertCustom } from './modules/Alert'
-import { Coments } from '../../containers/publication/modules/Coments'
 import { useNavigate } from 'react-router-dom'
 
-const Publication = ({ publication, setOpenBackDrop }) => {
+const PublicationResume = ({ publication, setOpenBackDrop }) => {
 
     const navigateTo = useNavigate()
 
@@ -19,7 +16,7 @@ const Publication = ({ publication, setOpenBackDrop }) => {
     }
 
     return (
-        <div className='publication border-rounded-all-10 background background-white px-4 py-3 mb-3'>
+        <div>
             <div className='d-flex align-items-center mb-3'>
                 <div>
                     <Avatar
@@ -29,7 +26,7 @@ const Publication = ({ publication, setOpenBackDrop }) => {
                                 cursor: "pointer"
                             }
                         }}
-                        src={`${publication?.user?.avatar?.url != '_' ? publication?.user?.avatar?.url : "" }`}
+                        src={`${publication?.user?.avatar?.url != '_' ? publication?.user?.avatar?.url : ""}`}
                     />
                 </div>
                 <div className='mx-3 w-75' >
@@ -48,15 +45,8 @@ const Publication = ({ publication, setOpenBackDrop }) => {
             {publication?.description &&
                 <Description description={publication?.description} />
             }
-            {publication?.images?.length > 0 &&
-                <Images images={publication?.images} />
-            }
-            {publication?.publication_type &&
-                <AlertCustom alert={publication?.publication_type} />
-            }
-            <Coments publication={publication} setOpenBackDrop={setOpenBackDrop} />
         </div>
     )
 }
 
-export { Publication }
+export { PublicationResume }

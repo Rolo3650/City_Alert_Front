@@ -57,7 +57,11 @@ const RightAside = ({ children }) => {
                 className='btn btn-aside'
                 id='resize-right-btn'
             />
-            <div>
+            <div style={{
+                width: (width - 1) + 'px',
+                minWidth: '300px',
+                maxWidth: `calc(100vw - ${maxWidth + 399}px)`
+            }}>
                 {children}
             </div>
         </div>

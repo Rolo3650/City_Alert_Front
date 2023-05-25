@@ -51,7 +51,11 @@ const LeftAside = ({ children }) => {
                 maxWidth: `calc(100vw - ${maxWidth + 400}px)`
             }}
         >
-            <div>
+            <div style={{
+                width: (width - 2) + 'px',
+                minWidth: '298px',
+                maxWidth: `calc(100vw - ${maxWidth + 402}px)`
+            }}>
                 {children}
             </div>
             <button

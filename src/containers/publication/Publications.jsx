@@ -6,14 +6,22 @@ import { Publication } from '../../components/publication/Publication';
 const Publications = ({ setOpenBackDrop }) => {
 
     const { publications } = usePublication();
-    const { loading, publicationList } = publications;
+    const { loading, publicationList, publicationFilter, filter } = publications;
 
     const returnPublications = () => {
 
-        if (publicationList?.length > 0) {
+        if (publicationList?.length > 0 && publicationFilter?.length < 1 && !filter) {
             return publicationList?.map((publication, index) => (
                 <Publication publication={publication} key={index} setOpenBackDrop={setOpenBackDrop} />
             ))
+        } else if (publicationFilter?.length > 0) {
+            return publicationFilter?.map((publication, index) => (
+                <Publication publication={publication} key={index} setOpenBackDrop={setOpenBackDrop} />
+            ))
+        } else {
+            return <div className='border-rounded-all-10 background background-white px-4 py-3 mb-3'>
+                No se encontraton coincidencias
+            </div>
         }
     }
 

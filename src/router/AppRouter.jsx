@@ -11,6 +11,7 @@ export const AppRouter = () => {
             {/* Index */} <Route path="/" element={<Index />} />
             {/* Sign Up */} <Route path="/sign-up" element={<SignUp />} />
             {/* Home */} <Route path="/home" element={<Home />} />
+            {/* Home - Search */} <Route path="/home/:query" element={<Home />} />
             {/* User */} <Route path="/user/:id" element={<User />} />
         </Routes>
     )

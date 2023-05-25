@@ -28,7 +28,7 @@ const Coment = ({ coment, setOpenBackDrop }) => {
                         src={`${coment?.user?.avatar?.url != '_' ? coment?.user?.avatar?.url : ""}`}
                     />
                 </div>
-                <div className='mx-3 w-100' >
+                <div className='mx-3 w-75' >
                     <h6 className='m-0 text-poppins text-truncate text-weight-600 mb-1'>
                         {coment?.user?.person?.name ?? ""} ~ {coment?.user?.email ?? ""}
                     </h6>

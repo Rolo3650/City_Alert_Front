@@ -8,16 +8,20 @@ import { Publications } from '../../containers/publication/Publications'
 import { usePublication } from '../../hooks/publiccation/usePublication'
 import { Backdrop, CircularProgress } from '@mui/material'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useUser } from '../../hooks/user/useUser'
 import { NewPublicationModal } from '../../containers/modal/publication/NewPublicationModal'
+import { PublicationsResume } from '../../containers/publication/PublicationsResume'
+import { useSearch } from '../../hooks/publiccation/useSearch'
 
 const Home = () => {
 
-    const { getAllApiPublications } = usePublication()
+    const { getAllApiPublications, getAllApiNearUser } = usePublication()
+    const { filterPublications } = useSearch()
     const [openBackDrop, setOpenBackDrop] = useState(true)
     const navigateTo = useNavigate()
     const { user } = useUser()
+    const { query } = useParams();
 
     const init = () => {
         if (!user?.id_user) {
@@ -27,12 +31,17 @@ const Home = () => {
                 setOpenBackDrop(false)
             }, 500)
             getAllApiPublications()
+            getAllApiNearUser()
         }
     }
 
     useEffect(() => {
         init()
     }, [])
+
+    useEffect(() => {
+        filterPublications(query)
+    }, [query])
 
     return (
         <>
@@ -51,9 +60,13 @@ const Home = () => {
                 </div>
                 <div className='right background background-grey'>
                     <RightAside
-
                     >
-                        Hola3
+                        <div className='p-4'>
+                            <p className='m-0 text-poppins text-weight-600 mb-3 px-4 py-2 background-white background border-rounded-all-10'>
+                                Cerca de tí
+                            </p>
+                            <PublicationsResume setOpenBackDrop={setOpenBackDrop} />
+                        </div>
                     </RightAside>
                 </div>
             </LayoutOne>

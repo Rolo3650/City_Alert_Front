@@ -31,6 +31,10 @@ const actionTypes = {
     // new publication
     SET_NEW_PUBLICATION_INITIAL_STATE: 'SET_NEW_PUBLICATION_INITIAL_STATE',
     SET_NEW_PUBLICATION: 'SET_NEW_PUBLICATION',
+
+    // theme
+    SET_THEME_LIGHT: 'SET_THEME_LIGHT',
+    SET_THEME_DARK: 'SET_THEME_DARK',
 }
 
 export { actionTypes }

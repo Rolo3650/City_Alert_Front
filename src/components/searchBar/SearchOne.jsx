@@ -4,12 +4,14 @@ import React from 'react'
 import { config } from '../../utils/config';
 import { useNavigate } from 'react-router-dom';
 import { usePublication } from '../../hooks/publiccation/usePublication';
+import { useColors } from '../../hooks/themes/useColors';
 
 const SearchOne = () => {
 
     const navigateTo = useNavigate()
     const { publications, setFilter } = usePublication()
     const { filter } = publications
+    const { colors } = useColors()
 
     const onChange = (e) => {
         navigateTo('/home/' + e.target.value);
@@ -24,7 +26,7 @@ const SearchOne = () => {
                     id='search'
                     label="Buscar"
                     sx={{
-                        backgroundColor: config.colors.WHITE,
+                        backgroundColor: colors.$color_1,
                         borderRadius: "20px",
                         paddingX: "5px",
                         paddingY: "5px",
@@ -39,10 +41,10 @@ const SearchOne = () => {
                             display: "none"
                         },
                         ":hover": {
-                            backgroundColor: config.colors.DARK_WHITE,
+                            backgroundColor: colors.$color_2,
                         },
                         "& .MuiInputBase-input": {
-                            color: config.colors.DARK_GREY,
+                            color: colors.$color_3,
                         }
                     }}
                     startAdornment={

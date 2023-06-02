@@ -2,6 +2,8 @@ import React, { createContext, useReducer } from 'react'
 import { actionTypes } from './ActionTypes'
 import { initial_state } from './states'
 import { useLogin } from '../hooks/user/useLogin'
+import { getThemeDark, getThemeLight } from './states/themes/theme'
+import { getColorsDark, getColorsLight } from './states/themes/colors'
 
 const reducerObject = (state, payload) => {
     return ({
@@ -18,7 +20,7 @@ const reducerObject = (state, payload) => {
         // edit user
         [actionTypes.SET_EDIT_USER_INITIAL_STATE]: { ...state, edit_user: initial_state.edit_user },
         [actionTypes.SET_EDIT_USER]: { ...state, edit_user: payload },
-        
+
         // sign up
         [actionTypes.SET_SIGN_UP_INITIAL_STATE]: { ...state, sign_up: initial_state.sign_up },
         [actionTypes.SET_SIGN_UP]: { ...state, sign_up: payload },
@@ -34,6 +36,16 @@ const reducerObject = (state, payload) => {
         // new publication
         [actionTypes.SET_NEW_PUBLICATION_INITIAL_STATE]: { ...state, new_publication: initial_state.new_publication },
         [actionTypes.SET_NEW_PUBLICATION]: { ...state, new_publication: payload },
+
+        // theme 
+        [actionTypes.SET_THEME_LIGHT]: {
+            ...state, theme: getThemeLight(),
+            colors: getColorsLight(),
+        },
+        [actionTypes.SET_THEME_DARK]: {
+            ...state, theme: getThemeDark(),
+            colors: getColorsDark(),
+        }
 
     })
 }

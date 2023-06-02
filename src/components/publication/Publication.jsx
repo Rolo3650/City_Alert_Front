@@ -6,10 +6,13 @@ import { Images } from './modules/Images'
 import { AlertCustom } from './modules/Alert'
 import { Coments } from '../../containers/publication/modules/Coments'
 import { useNavigate } from 'react-router-dom'
+import { useColors } from '../../hooks/themes/useColors'
 
 const Publication = ({ publication, setOpenBackDrop }) => {
 
     const navigateTo = useNavigate()
+    const { colors } = useColors();
+    const { theme } = colors
 
     const navigateUser = () => {
         setOpenBackDrop(true)
@@ -19,7 +22,7 @@ const Publication = ({ publication, setOpenBackDrop }) => {
     }
 
     return (
-        <div className='publication border-rounded-all-10 background background-white px-4 py-3 mb-3'>
+        <div className={`publication border-rounded-all-10 background ${theme == 'dark' ? 'background-grey' : 'background-white'} px-4 py-3 mb-3`}>
             <div className='d-flex align-items-center mb-3'>
                 <div>
                     <Avatar
@@ -32,11 +35,11 @@ const Publication = ({ publication, setOpenBackDrop }) => {
                         src={`${publication?.user?.avatar?.url != '_' ? publication?.user?.avatar?.url : "" }`}
                     />
                 </div>
-                <div className='mx-3 w-75' >
+                <div className={`mx-3 w-75 ${theme == 'dark' ? 'text-color-white' : ''}`} >
                     <h6 className='m-0 text-poppins text-truncate text-weight-600 mb-1'>
                         {publication?.user?.person?.name ?? ""} ~ {publication?.user?.email ?? ""}
                     </h6>
-                    <p className='m-0 text-poppins text-weight-400 text-color-grey'>
+                        <p className={`m-0 text-poppins text-weight-400 ${theme == 'dark' ? 'text-color-light-grey' : 'text-color-grey'}`}>
                         {`
                         ${moment(publication?.date ?? new Date()).format("DD/MM/YYYY h:mm a")}
                         | ${publication?.settlement?.name ?? ""}

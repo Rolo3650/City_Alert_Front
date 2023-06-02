@@ -14,9 +14,28 @@
 
     }
 
-    &.background-grey {
+    &.background-light-grey {
 
         background: $light-grey;
+
+    }
+
+    &.background-grey {
+
+        background: $grey;
+
+    }
+
+    &.background-dark-grey {
+
+        background: $dark-grey;
+
+    }
+
+    
+    &.background-terciary {
+
+        background: $terciary;
 
     }
 

@@ -6,11 +6,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { config } from '../../../utils/config';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../../hooks/user/useUser';
+import { useColors } from '../../../hooks/themes/useColors';
 
 const HeaderOne = ({ setOpenBackDrop }) => {
 
     const { user } = useUser();
     const navigateTo = useNavigate()
+    const { colors } = useColors()
+    const { theme } = colors
 
     const modalShow = (modal) => {
         $(`#${modal}`).modal('show');
@@ -22,9 +25,9 @@ const HeaderOne = ({ setOpenBackDrop }) => {
             navigateTo(`/user/${user.id_user ?? 0}`)
         }, 500)
     }
-
+    
     return (
-        <div className='header header-one'>
+        <div className={`header header-one header-one-${theme}`}>
             <div className='first'>
                 <h2 className='text-weight-600 text-nowrap text'>City Alert</h2>
                 <div className='button'>
@@ -44,7 +47,7 @@ const HeaderOne = ({ setOpenBackDrop }) => {
             <div className='third'>
                 <Button
                     variant='contained'
-                    color='lightPrimary'
+                    color="lightPrimary"
                     endIcon={<AddCircleIcon />}
                     sx={{
                         fontWeight: "800",
@@ -66,7 +69,7 @@ const HeaderOne = ({ setOpenBackDrop }) => {
                             cursor: "pointer"
                         }
                     }}
-                    src={`${user?.avatar?.url != '_' ? user?.avatar?.url : "" }`}
+                    src={`${user?.avatar?.url != '_' ? user?.avatar?.url : ""}`}
                 />
             </div>
         </div>

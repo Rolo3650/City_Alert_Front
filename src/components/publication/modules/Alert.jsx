@@ -1,8 +1,11 @@
 import { Alert, AlertTitle } from '@mui/material'
 import React from 'react'
 import { config } from '../../../utils/config'
+import { useColors } from '../../../hooks/themes/useColors'
 
 const AlertCustom = ({ alert }) => {
+
+    const { colors } = useColors()
 
     const returnAlert = () => {
         if (alert.id_publication_type == 3) {
@@ -10,7 +13,7 @@ const AlertCustom = ({ alert }) => {
                 severity='warning'
                 variant='filled'
                 sx={{
-                    backgroundColor: config.colors.RED,
+                    backgroundColor: colors.$color_5,
                     alignItems: 'center',
                     "& .MuiSvgIcon-root": {
                         fontSize: "30px"
@@ -24,7 +27,7 @@ const AlertCustom = ({ alert }) => {
                 severity='warning'
                 variant='filled'
                 sx={{
-                    backgroundColor: config.colors.ORANGE,
+                    backgroundColor: colors.$color_6,
                     alignItems: 'center',
                     "& .MuiSvgIcon-root": {
                         fontSize: "30px"
@@ -38,7 +41,7 @@ const AlertCustom = ({ alert }) => {
                 severity='warning'
                 variant='filled'
                 sx={{
-                    backgroundColor: config.colors.YELLOW,
+                    backgroundColor: colors.$color_7,
                     alignItems: 'center',
                     "& .MuiSvgIcon-root": {
                         fontSize: "30px"

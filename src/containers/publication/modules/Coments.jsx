@@ -2,17 +2,20 @@ import React, { useState } from 'react'
 import { Coment } from '../../../components/publication/modules/Coment'
 import { Button } from '@mui/material'
 import { AddComent } from '../../../components/publication/actions/AddComent'
+import { useColors } from '../../../hooks/themes/useColors'
 
 const Coments = ({ publication, setOpenBackDrop }) => {
 
     const [seeMore, setSeeMore] = useState(false)
+    const { colors } = useColors();
+    const { theme } = colors
 
     const onClick = () => {
         setSeeMore(!seeMore)
     }
 
     return (
-        <div className='background background-grey p-3 border-rounded-all-10'>
+        <div className={`background ${theme == 'dark' ? 'background-dark-grey' : 'background-light-grey'} p-3 border-rounded-all-10`}>
             {publication?.coments.length > 0 && !seeMore &&
                 <Coment coment={publication?.coments[0]} setOpenBackDrop={setOpenBackDrop} />
             }

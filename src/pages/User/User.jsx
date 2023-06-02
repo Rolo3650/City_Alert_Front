@@ -28,7 +28,7 @@ const User = () => {
         <LayoutTwo
             header={<HeaderTwo setOpenBackDrop={setOpenBackDrop} />}
         >
-            <div className='h-100 w-100 background background-grey d-flex justify-content-center px-5'>
+            <div className='h-100 w-100 background background-light-grey d-flex justify-content-center px-5'>
                 <InfoUser setOpenBackDrop={setOpenBackDrop} openBackDrop={openBackDrop} />
             </div>
             <Backdrop

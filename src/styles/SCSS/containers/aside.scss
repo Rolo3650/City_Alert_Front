@@ -1,5 +1,5 @@
 .aside {
-    
+
     height: 100%;
     display: grid;
 
@@ -18,12 +18,19 @@
     }
 
     & .btn-aside {
-        background-color: $secondary;
         height: 100%;
         width: 1px;
         padding: 0;
         margin: 0;
         cursor: w-resize;
+
+        &.light {
+            background-color: $secondary;
+        }
+
+        &.dark {
+            background-color: $terciary;
+        }
     }
 
 }

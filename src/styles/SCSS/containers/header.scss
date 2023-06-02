@@ -8,8 +8,15 @@
         display: grid;
         align-items: center;
         justify-content: center;
-        background-color: $secondary;
         color: $white;
+
+        &-dark {
+            background-color: $terciary;
+        }
+
+        &-light {
+            background-color: $secondary;
+        }
 
         & .first .text {
 

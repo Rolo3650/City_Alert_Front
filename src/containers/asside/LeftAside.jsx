@@ -1,12 +1,15 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useColors } from '../../hooks/themes/useColors';
 
 const LeftAside = ({ children }) => {
 
     const [lastX, setLastX] = useState(0);
     const [width, setWidth] = useState(400);
     const [maxWidth, setMaxWidth] = useState(400);
+    const { colors } = useColors();
+    const { theme } = colors
 
     const handleWidth = () => {
         let isResizing = false;
@@ -59,7 +62,7 @@ const LeftAside = ({ children }) => {
                 {children}
             </div>
             <button
-                className='btn btn-aside'
+                className={`btn btn-aside ${theme}`}
                 id='resize-left-btn'
             />
         </div>
